@@ -53,7 +53,9 @@ namespace addressbook_test_autoit
         }
         private void ClousGroupsDialogue()
         {
-            aux.ControlClick(GROUPWINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d54v");
+            aux.ControlClick(GROUPWINTITLE, "", "WindowsForms10.BUTTON.app.0.2c908d54");
+            aux.WinWait(WINTITLE);
+          
         }
 
         private void OpenGroupsDialogue()
