@@ -16,7 +16,7 @@ namespace mantis_tests
             };
             ProjectData project = new ProjectData()
             {
-                Name = "Project!%)'!%",
+                Id = "23",
 
             };
             IssueData issue = new IssueData()

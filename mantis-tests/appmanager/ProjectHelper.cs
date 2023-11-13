@@ -16,14 +16,14 @@ namespace mantis_tests
             ConfirmCreationProject();
 
         }
-        public void Remove()
+        public void Remove(int v)
         {
-            GoToProject();
+            GoToProject(v);
             DeleteProjectButton();
             ConfirmProjectDelition();
         }
 
-        public void GoToProject()
+        public void GoToProject(int i)
         {
             driver.FindElement(By.XPath("(//tbody//tr//td//a)[1]")).Click();
         }

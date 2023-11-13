@@ -9,6 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.FtpClient;
 using System.IO;
+using System.ComponentModel;
+using System.ServiceModel.Configuration;
+
 namespace mantis_tests
 {
     public class APIHelper : HelperBase
@@ -25,9 +28,50 @@ namespace mantis_tests
             issue.description = issueData.Description; //текст
             issue.category = issueData.Category;
             issue.project = new Mantis.ObjectRef();//поле issue.project имеет тип ObjectRef, поэтому создали
-            issue.project.name = project.Name;
+            issue.project.id = project.Id;
             client.mc_issue_add(account.Name, account.Password, issue);//вызываем нужный метод 
         }
+
+        public List<ProjectData> GetProjects(AccountData account)
+        {
+            {
+                List<ProjectData> projects = new List<ProjectData>();
+                Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();
+                Mantis.ProjectData[] projectsoInBT = client.mc_projects_get_user_accessible(account.Name, account.Password);
+                foreach (Mantis.ProjectData item in projectsoInBT)
+                {
+                    projects.Add(new ProjectData(item.name)
+                    {
+                        Id = item.id,
+                        Name = item.name
+                    });
+                }
+                return projects;
+
+            }
+        }
+
+        public void CreateNewProject(AccountData account, ProjectData project)
+        {
+            Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();
+            Mantis.ProjectData projectCreation = new Mantis.ProjectData();
+            projectCreation.name = project.Name;
+
+            client.mc_project_add(account.Name, account.Password, projectCreation);
+        }
+        /*public List<ProjectData> GetProjects()
+        {
+            List<ProjectData> projects = new List<ProjectData>();
+            manager.Navigator.GoToControlProject();
+            ICollection<IWebElement> elements = driver.FindElements(By.XPath("//tbody//tr//a"));
+            foreach (IWebElement element in elements)
+            {
+                projects.Add(new ProjectData(element.Text));
+            }
+
+            return projects;
+
+        }*/
     }
 }
 

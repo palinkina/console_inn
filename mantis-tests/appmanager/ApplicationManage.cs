@@ -4,6 +4,7 @@ using System;
 using System.Threading;
 using mantis_tests.appmanager;
 using System.Text;
+using mantis_tests.tests;
 //using OpenQA.Selenium.DevTools.V117.Audits;
 
 namespace mantis_tests
@@ -32,6 +33,7 @@ namespace mantis_tests
             Navigator = new NavigationHelper(this);
             Ftp = new FtpHelper(this);
             API = new APIHelper(this);
+
         }
         ~ApplicationManager()
         {
@@ -70,5 +72,6 @@ namespace mantis_tests
         public NavigationHelper Navigator { get; set; }
         public ProjectHelper Project { get; set; }
         public  APIHelper  API { get;  set; }
+
     }
 }

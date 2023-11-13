@@ -10,6 +10,8 @@ namespace mantis_tests.tests
 {
     public class AuthentificationBase : TestBase
     {
+
+
         [SetUp]
         public void SetupLogin()
         {
