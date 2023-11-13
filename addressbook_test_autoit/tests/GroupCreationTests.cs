@@ -22,11 +22,11 @@ namespace addressbook_test_autoit
             app.Groups.Add(newG);
 
             List<GroupData> newGroups = app.Groups.GetGroupList();
-            //oldGroups.Add(newG);
+
             oldGroups.Sort();
             newGroups.Sort();
             Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
-            //Assert.AreEqual(oldGroups, newGroups);
+
         }
     }
 }

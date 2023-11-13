@@ -13,7 +13,6 @@ namespace addressbook_test_autoit
         public void GroupModificationTest()
         {
             List<GroupData> oldGroups = app.Groups.GetGroupList();
-            //GroupData group = oldGroups[0];
             GroupData group = new GroupData()
             {
                 Name = "new_test"
@@ -22,7 +21,6 @@ namespace addressbook_test_autoit
 
             List<GroupData> newGroups = app.Groups.GetGroupList();
             oldGroups[0].Name = group.Name;
-            //oldGroups.Add(newGroup);
             oldGroups.Sort();
             newGroups.Sort();
             Assert.AreEqual(oldGroups.Count, newGroups.Count);
