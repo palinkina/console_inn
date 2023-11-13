@@ -1921,9 +1921,7 @@ namespace mantis_tests.Mantis {
                 this.RaisePropertyChanged("id");
             }
         }
-
-        public string Id { get; internal set; }
-
+        
         /// <remarks/>
         public string name {
             get {

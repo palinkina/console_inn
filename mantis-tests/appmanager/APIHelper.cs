@@ -1,10 +1,14 @@
 ﻿using mantis_tests.Mantis;
 using System;
 using System.Collections.Generic;
+using mantis_tests.tests;
+using NUnit.Framework;
+using OpenQA.Selenium;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Net.FtpClient;
+using System.IO;
 namespace mantis_tests
 {
     public class APIHelper : HelperBase
@@ -21,7 +25,7 @@ namespace mantis_tests
             issue.description = issueData.Description; //текст
             issue.category = issueData.Category;
             issue.project = new Mantis.ObjectRef();//поле issue.project имеет тип ObjectRef, поэтому создали
-            issue.project.Id = project.Id;
+            issue.project.name = project.Name;
             client.mc_issue_add(account.Name, account.Password, issue);//вызываем нужный метод 
         }
     }
