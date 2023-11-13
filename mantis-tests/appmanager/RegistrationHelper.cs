@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium.Firefox;
 using System.Threading;
-
+//
 namespace mantis_tests
 {
     public class RegistrationHelper : HelperBase
