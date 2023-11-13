@@ -31,6 +31,7 @@ namespace mantis_tests
             Registration = new RegistrationHelper(this);
             Navigator = new NavigationHelper(this);
             Ftp = new FtpHelper(this);
+            API = new APIHelper(this);
         }
         ~ApplicationManager()
         {
@@ -68,7 +69,6 @@ namespace mantis_tests
         public FtpHelper Ftp { get; set; }
         public NavigationHelper Navigator { get; set; }
         public ProjectHelper Project { get; set; }
-
-
+        public  APIHelper  API { get;  set; }
     }
 }

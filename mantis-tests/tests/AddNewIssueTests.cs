@@ -1,11 +1,10 @@
 ﻿using mantis_tests.Mantis;
-using mantis_tests.tests;
 using NUnit.Framework;
 using System;
 namespace mantis_tests
 {
     [TestFixture]
-    public class AddNewIssueTests :  TestBase
+    public class AddNewIssueTests : TestBase
     {
         [Test]
         public void AddNewIssue()
@@ -18,6 +17,7 @@ namespace mantis_tests
             ProjectData project = new ProjectData()
             {
                 Id = "1",
+
             };
             IssueData issue = new IssueData()
             {

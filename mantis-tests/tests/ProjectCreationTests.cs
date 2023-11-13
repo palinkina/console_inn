@@ -15,7 +15,9 @@ namespace mantis_tests
             projects = app.Project.GetProjects();
 
 
-            ProjectData project = new ProjectData("Project" + TestBase.GenerateRandomString(10));
+            ProjectData project = new ProjectData
+            { Name = "Project" + TestBase.GenerateRandomString(10)
+            };
 
 
             app.Navigator.GoToControlProject();

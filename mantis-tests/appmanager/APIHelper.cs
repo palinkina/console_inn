@@ -13,17 +13,17 @@ namespace mantis_tests
         {
         }
 
-         public void CreateNewIssue(AccountData account, ProjectData project, IssueData issueData)
-         {
-             Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();// объект, через который можно обращатсья к операциям
-             Mantis.IssueData issue = new Mantis.IssueData();//создали обязательный параметр для mc_issue_add
-             issue.summary = issueData.Summary; // текст
-             issue.description = issueData.Description; //текст
-             issue.category = issueData.Category;
-             issue.project = new Mantis.ObjectRef();//поле issue.project имеет тип ObjectRef, поэтому создали
-             issue.project.Id = project.Id;
-             client.mc_issue_add(account.Name, account.Password, issue);//вызываем нужный метод 
-         }
+        public void CreateNewIssue(AccountData account, ProjectData project, IssueData issueData)
+        {
+            Mantis.MantisConnectPortTypeClient client = new Mantis.MantisConnectPortTypeClient();// объект, через который можно обращатсья к операциям
+            Mantis.IssueData issue = new Mantis.IssueData();//создали обязательный параметр для mc_issue_add
+            issue.summary = issueData.Summary; // текст
+            issue.description = issueData.Description; //текст
+            issue.category = issueData.Category;
+            issue.project = new Mantis.ObjectRef();//поле issue.project имеет тип ObjectRef, поэтому создали
+            issue.project.Id = project.Id;
+            client.mc_issue_add(account.Name, account.Password, issue);//вызываем нужный метод 
+        }
     }
 }
 
