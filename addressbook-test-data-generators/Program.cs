@@ -35,7 +35,7 @@ namespace addressbook_test_data_generators
             List<ContactData> contacts = new List<ContactData>();
             for (int y = 0; y < count; y++)
             {
-                contacts.Add(new ContactData(TestBase.GenerateRandomString(15), TestBase.GenerateRandomString(15))
+                contacts.Add(new ContactData(TestBase.GenerateRandomString(15), TestBase.GenerateRandomString(15),"")
                 {
                     Address = TestBase.GenerateRandomString(30),
                     HomePhone = TestBase.GenerateRandomString(30),
