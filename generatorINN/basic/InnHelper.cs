@@ -10,9 +10,12 @@ using System.Threading.Tasks;
 
 namespace generatorINN
 {
-    public class InnHelper
+    public class InnHelper 
     {
         public static Random rnd = new Random();
+        private int a = 42; //первые две цифры (77) на 4,2 - типо для ЮЛ 
+        private int b;
+
         public static string GenerateRandomString(int max)
         {
             Random rnd = new Random();
@@ -26,11 +29,6 @@ namespace generatorINN
         }
 
 
-
-
-
     }
-
-
     //string json = JsonConvert.SerializeObject(numberinn, Formatting.Indented);
 }

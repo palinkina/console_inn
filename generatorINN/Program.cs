@@ -17,7 +17,7 @@ namespace generatorINN
             Application.Run(new INNGenForm());
 
 
-            int count = 1;
+            /*int count = 1;
             List<InnData> numberinn = new List<InnData>();
             for (int i = 0; i < count; i++)
             {
@@ -38,6 +38,7 @@ namespace generatorINN
             {
                 writer.Write(JsonConvert.SerializeObject(numberinn, Newtonsoft.Json.Formatting.Indented));
             }
+            */
         }
     }
 }

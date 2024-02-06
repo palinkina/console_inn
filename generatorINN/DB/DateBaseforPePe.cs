@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 /*
 namespace generatorINN
 {
-    internal class DBforPePe
+     class DBforPePe
     {
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=pepe_hands");
     }
