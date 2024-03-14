@@ -138,7 +138,7 @@ namespace ConsoleApp_GenInn
                     Console.WriteLine("\n --------------------------");
                     Console.WriteLine("|  You failed! Goodbye =)  |");
                     Console.WriteLine(" --------------------------\n");
-                    Console.WriteLine(n+"else if");
+                    //Console.WriteLine(n+"else if");
                     break;
                 }
                 else //if (n < 5)
@@ -147,7 +147,7 @@ namespace ConsoleApp_GenInn
                     Console.WriteLine("|Invalid character entered |");
                     Console.WriteLine("|Try again...              |");
                     Console.WriteLine(" --------------------------\n");
-                    Console.WriteLine(n + "else");
+                    //Console.WriteLine(n + "else");
                     n++;
                 }
                
@@ -224,23 +224,28 @@ namespace ConsoleApp_GenInn
             {
                 numbers.Add(rnd.Next(0, 10));
             }
+
             control_1 = arrayNum[0] * 7 + arrayNum[1] * 2 + numbers[0] * 4 + numbers[1] * 10 + numbers[2] * 3 + numbers[3] * 5 + numbers[4] * 9 + numbers[5] * 4 + numbers[6] * 6 + numbers[7] * 8;
             control_1 = control_1 % 11;
             control_2 = arrayNum[0] * 3 + arrayNum[1] * 7 + numbers[0] * 2 + numbers[1] * 4 + numbers[2] * 10 + numbers[3] * 3 + numbers[4] * 5 + numbers[5] * 9 + numbers[6] * 4 + numbers[7] * 6 + control_1 * 8;
             control_2 = control_2 % 11;
+
             if (control_1 == 10)
             {
                 control_1 = 0;
             }
+
             if (control_2 == 10)
             {
                 control_2 = 0;
             }
+
             foreach (int element in numbers)
             {
 
                 endstr = endstr + element;
             }
+
             endstr = first_numb + endstr + control_1 + control_2;
 
             return endstr;
